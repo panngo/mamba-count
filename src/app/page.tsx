@@ -51,19 +51,25 @@ export default function Home() {
 
   return (
     <div 
-      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat" 
+      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center bg-no-repeat relative" 
       style={{ backgroundImage: "url('/mamba.png')" }}
     >
-      <h1 className="text-4xl font-bold mb-4 text-white">Mamba 404 Count</h1>
-      <div className="flex items-center space-x-4">
-        <button 
-          onClick={incrementCount} 
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Increment
-        </button>
+      <div className="flex flex-col items-center justify-center absolute inset-0 z-10">
+        <h1 className="text-9xl font-bold mb-8 text-white text-center">
+          Mamba 404 Count
+        </h1>
+        <h1 className="text-9xl font-bold mb-8 text-white text-center">
+            {totalRecords}
+        </h1>
+        <div className="flex items-center justify-center mb-8">
+          <button 
+            onClick={incrementCount} 
+            className="px-6 py-3 bg-gray-800 text-white rounded hover:bg-gray-700 transition-colors"
+          >
+            Increment
+          </button>
+        </div>
       </div>
-      <p className="text-white mt-4">Total records: {totalRecords}</p>
     </div>
   );
 }
